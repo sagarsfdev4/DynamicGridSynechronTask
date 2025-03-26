@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Dynamic Grid Creation">
+        <div class="slds-p-around_medium">
+            <lightning-input class="slds-size_x-small" type="number" label="Enter Grid Size" value={gridSize} onchange={handleGridSizeChange}></lightning-input>
+            <div class="grid slds-m-top_medium" style={gridStyle}>
+                <template for:each={gridNumbers} for:item="cell">
+                    <div key={cell.value} class="cell">
+                        <p style={cell.colorStyle}>{cell.value}</p>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>
